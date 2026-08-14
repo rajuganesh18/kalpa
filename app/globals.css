@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;700&display=swap');
+
+:root{
+  --ink:#181126; --ink2:#241A38; --ink3:#0D0916;
+  --paper:#F6EEE0; --marigold:#E8A33D; --sindoor:#C4362A;
+  --gold:#B98A2E; --jade:#3E7A4E; --line:#34294f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ink);color:var(--paper);font-family:'Mukta',sans-serif;line-height:1.55}
+button{font-family:inherit;cursor:pointer}
+.frame{max-width:440px;margin:0 auto;padding:0 14px 90px;min-height:100vh}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--ink) 80%,transparent);
+  padding:14px 2px 16px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Yatra One',cursive;font-size:1.15rem;color:var(--marigold)}
+.hdr .back{background:none;border:none;color:var(--paper);font-size:1rem;opacity:.8;padding:4px 8px}
+.markrow{display:flex;align-items:center;gap:8px}
+.markrow svg{width:24px;height:24px}
+
+/* shelf */
+.today{border:1px dashed var(--marigold);border-radius:4px;padding:10px 13px;margin:6px 0 16px;
+  display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.today b{color:var(--marigold);letter-spacing:1.5px;text-transform:uppercase;font-size:.68rem}
+.scard{width:100%;text-align:left;background:var(--ink2);border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;margin-bottom:14px;color:inherit;display:block;text-decoration:none}
+.scard .art{height:110px;position:relative;display:block}
+.scard .badge{position:absolute;top:9px;left:9px;font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;background:rgba(13,9,22,.82)}
+.scard .meta{padding:11px 13px;display:block}
+.scard .ttl{font-family:'Yatra One',cursive;font-size:1.2rem;display:block}
+.scard .prov{font-size:.8rem;opacity:.65;line-height:1.45;margin-top:2px;display:block}
+.scard .row{display:flex;justify-content:space-between;margin-top:8px;font-size:.68rem;opacity:.6}
+.scard.soon{opacity:.55}
+
+/* series */
+.hero{height:140px;border-radius:6px;position:relative;margin:4px 0 12px;overflow:hidden}
+.hero .t{position:absolute;bottom:11px;left:13px}
+.hero .t b{font-family:'Yatra One',cursive;font-size:1.7rem;display:block;line-height:1.1}
+.hero .t span{font-size:.72rem;opacity:.8}
+.eprow{width:100%;display:flex;align-items:center;gap:12px;padding:12px 4px;border:none;
+  border-bottom:1px solid var(--ink2);font-size:.86rem;background:none;color:inherit;text-align:left}
+.eprow:disabled{opacity:.45;cursor:default}
+.eprow .n{width:30px;height:30px;border-radius:4px;display:grid;place-items:center;font-size:.72rem;font-weight:700;flex:0 0 auto}
+.eprow .n.done{background:var(--marigold);color:#221a10}
+.eprow .n.now{background:var(--sindoor);color:#fff}
+.eprow .n.todo{background:var(--ink2);color:var(--paper);border:1px solid var(--line)}
+.eprow .g{flex:1}
+.eprow .g b{display:block;font-weight:500}
+.eprow .g em{font-style:normal;font-size:.66rem;opacity:.5}
+.eprow .c{font-size:.7rem;color:var(--marigold);white-space:nowrap}
+.finale-note{font-size:.68rem;opacity:.4;margin-top:18px;text-align:center}
+.resetrow{margin-top:26px;text-align:center}
+.resetrow button{background:none;border:1px solid var(--line);color:var(--paper);opacity:.6;
+  padding:7px 16px;border-radius:999px;font-size:.72rem}
+
+/* recap */
+.recapwrap{text-align:center;margin-top:22px}
+.recapwrap .k{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--marigold)}
+.recapwrap h2{font-family:'Yatra One',cursive;font-size:1.8rem;font-weight:400;margin:4px 0 2px}
+.recapwrap .d{font-size:.74rem;opacity:.55}
+.recap{border:1px solid var(--line);border-radius:6px;padding:18px 16px;background:var(--ink2);margin-top:22px;text-align:left}
+.recap .k2{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--marigold);margin-bottom:12px}
+.recap .l{font-size:.84rem;padding:8px 0 8px 14px;border-left:2px solid var(--sindoor);margin-bottom:10px;line-height:1.45;opacity:.92}
+.gobtn{margin-top:16px;width:100%;padding:13px;background:var(--marigold);border:none;border-radius:4px;
+  font-family:'Yatra One',cursive;font-size:1rem;color:#221a10}
+
+/* reader */
+.rbar{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--ink) 82%,transparent);
+  display:flex;align-items:center;gap:10px;padding:13px 2px 14px;font-size:.8rem}
+.rbar .back{background:none;border:none;color:var(--paper);opacity:.85;font-size:1rem;padding:2px 6px}
+.pbar{flex:1;height:3px;background:#2c2140;border-radius:2px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--marigold);transition:width .3s}
+.epname{font-size:.66rem;opacity:.5;letter-spacing:1px;white-space:nowrap}
+.scene-label{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;opacity:.45;margin:32px 4px -10px}
+
+.panel{background:var(--paper);color:#221a10;border-radius:4px;border:3px solid var(--ink3);
+  box-shadow:0 8px 0 -3px rgba(0,0,0,.45);margin:24px 0;overflow:hidden;position:relative}
+.panel .scene{position:relative}
+.panel .scene svg{display:block;width:100%;height:auto}
+.panel .scene::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;
+  background-image:radial-gradient(circle 1px,#221a10 55%,transparent 56%);background-size:7px 7px}
+.cap{margin:12px 14px;padding:9px 12px;background:#FFFDF7;border:2px solid #221a10;border-left:6px solid var(--marigold);font-size:.9rem}
+.th{margin:12px 18px 16px;padding:9px 13px;border:2px dashed #6b5a3d;border-radius:14px;font-style:italic;color:#4a3c26;font-size:.9rem}
+.sp{position:relative;margin:12px 18px 18px;padding:9px 13px;background:#FFFDF7;border:2px solid #221a10;border-radius:15px;font-size:.92rem}
+.sp b{display:block;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--sindoor);margin-bottom:1px}
+.sp::after{content:"";position:absolute;bottom:-10px;left:32px;width:15px;height:15px;background:#FFFDF7;
+  border-right:2px solid #221a10;border-bottom:2px solid #221a10;transform:rotate(45deg) skew(6deg,6deg)}
+.sfx{position:absolute;font-family:'Yatra One',cursive;color:var(--sindoor);
+  text-shadow:2px 2px 0 var(--paper),3px 3px 0 #221a10;transform:rotate(-7deg);font-size:1.4rem;z-index:3}
+
+.phone{margin:16px auto;width:84%;background:#101018;border-radius:20px;border:3px solid #221a10;padding:13px 12px 16px;color:#e8e6ef}
+.phone .pt{text-align:center;font-size:.64rem;opacity:.5;letter-spacing:2px;margin-bottom:9px}
+.phone .pf{font-size:.68rem;font-weight:700;letter-spacing:1.5px;color:var(--marigold);margin:0 3px 6px;text-transform:uppercase}
+.phone .m{background:#232336;border-radius:12px 12px 12px 3px;padding:8px 12px;font-size:.86rem;margin:6px 2px;max-width:92%}
+.phone .m.me{background:#3b2f14;border-radius:12px 12px 3px 12px;margin-left:auto}
+.phone .typ{font-size:.74rem;opacity:.6;font-style:italic;margin:8px 4px 0}
+
+.choice{margin:28px 0;padding:22px 17px 24px;border:3px double var(--marigold);border-radius:5px;
+  background:linear-gradient(160deg,var(--ink2),var(--ink));text-align:center}
+.choice .q{font-family:'Yatra One',cursive;font-size:1.1rem;color:var(--marigold);margin-bottom:15px;line-height:1.35}
+.choice button{display:block;width:100%;margin:9px 0;padding:12px 13px;background:var(--paper);
+  border:2px solid var(--ink3);border-radius:4px;font-size:.9rem;font-weight:600;color:#221a10;
+  box-shadow:0 5px 0 -2px rgba(0,0,0,.5);transition:transform .12s}
+.choice button:hover:not(:disabled){transform:translateY(-2px)}
+.choice.done button{opacity:.32}
+.choice.done button.pick{opacity:1;background:var(--marigold);border-color:var(--marigold)}
+.choice .sv{margin-top:11px;font-size:.72rem;color:var(--marigold);display:none}
+.choice.done .sv{display:block}
+
+.endcard{margin:32px 0 8px;padding:38px 20px;border:3px solid var(--marigold);border-radius:5px;
+  text-align:center;background:linear-gradient(180deg,#0d0916,var(--ink2))}
+.endcard .big{font-family:'Yatra One',cursive;font-size:1.55rem;margin-bottom:6px}
+.endcard .nx{font-family:'Yatra One',cursive;color:var(--marigold);font-size:1.05rem;margin-top:16px}
+.endcard .memo{font-size:.74rem;opacity:.65;margin-top:8px}
+.endcard button{margin-top:20px;width:100%;padding:12px;background:var(--marigold);border:none;border-radius:4px;
+  font-family:'Yatra One',cursive;font-size:.95rem;color:#221a10}
+.endcard .ghost{background:none;border:1px solid var(--line);color:var(--paper);opacity:.75;
+  font-family:'Mukta',sans-serif;font-size:.78rem;margin-top:10px}
